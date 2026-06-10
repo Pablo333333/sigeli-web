@@ -1,0 +1,44 @@
+# Dependencias de Node
+node_modules/
+/.pnp
+.pnp.js
+
+# Compilación y salida de Next.js
+.next/
+out/
+build/
+
+# Logs del sistema y de npm
+ls-themese.css
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variables de entorno locales y secretos (¡MUY IMPORTANTE!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de configuración de frameworks / herramientas locales
+.vercel
+.turbo
+
+# Cobertura de tests
+coverage/
+
+# Configuraciones de editores de código (VS Code, WebStorm, etc.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos basura del sistema operativo
+.DS_Store
+Thumbs.db
