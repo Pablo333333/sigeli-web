@@ -81,18 +81,14 @@ export default function TransparenciaPage() {
 
     setUpdatingSemaforo(true);
     try {
-      // Nota: En una implementación real, buscaríamos el ID real del tenant
-      // Aquí usamos el nombre como ID para el ejemplo si el ID no está disponible
-      const tenant = tenants.find(t => t.name === selectedTenant);
-      if (!tenant) return;
-
-      await api.patch(`/transparencia/semaforo/${tenant.id}`, {
+      await api.patch(`/transparencia/semaforo/${selectedTenant}`, {
         nivel: newLevel,
         justificacion
       });
       
       alert('Semáforo actualizado correctamente');
       setJustificacion('');
+      setSelectedTenant('');
       fetchData();
     } catch (error) {
       alert('Error al actualizar el semáforo');
@@ -174,7 +170,7 @@ export default function TransparenciaPage() {
                 >
                   <option value="">Seleccione una empresa/comunidad</option>
                   {tenants.map(t => (
-                    <option key={t.id} value={t.name}>{t.name} ({t.trustLevel})</option>
+                    <option key={t.id} value={t.id}>{t.name} ({t.trustLevel})</option>
                   ))}
                 </select>
               </div>
