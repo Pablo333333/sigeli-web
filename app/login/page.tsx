@@ -24,6 +24,9 @@ export default function LoginPage() {
       localStorage.setItem('sigeli_token', access_token);
       localStorage.setItem('sigeli_user', JSON.stringify(user));
 
+      // También guardamos en cookies para el middleware
+      document.cookie = `sigeli_token=${access_token}; path=/; max-age=86400; SameSite=Lax`;
+
       router.push('/admin');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Error al iniciar sesión. Verifique sus credenciales.');

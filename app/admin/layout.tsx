@@ -40,6 +40,7 @@ export default function AdminLayout({
   const handleLogout = () => {
     localStorage.removeItem('sigeli_token');
     localStorage.removeItem('sigeli_user');
+    document.cookie = 'sigeli_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     router.push('/login');
   };
 
