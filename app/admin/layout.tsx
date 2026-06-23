@@ -88,6 +88,15 @@ export default function AdminLayout({
           ))}
         </nav>
 
+        <div className="p-4 border-t border-slate-100 space-y-1">
+          <button 
+            onClick={handleLogout}
+            className="flex items-center space-x-3 p-3 w-full text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            <LogOut className="w-5 h-5" />
+            <span className="font-medium">Cerrar Sesión</span>
+          </button>
+        </div>
       </aside>
 
       {/* Main Content */}
