@@ -86,7 +86,7 @@ export default function ComunerosPage() {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `padron-comuneros-sigeli-${new Date().getTime()}.xlsx`);
+      link.setAttribute('download', `padron-comuneros-talento-${new Date().getTime()}.xlsx`);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -362,7 +362,7 @@ export default function ComunerosPage() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-slate-800">{selectedCv.user?.fullName}</h2>
-                  <p className="text-sm text-slate-500">Ficha de Talento SIGELI</p>
+                  <p className="text-sm text-slate-500">Ficha de Talento</p>
                 </div>
               </div>
               <button onClick={() => setIsViewModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-2 hover:bg-white rounded-full">

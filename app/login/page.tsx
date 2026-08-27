@@ -23,15 +23,15 @@ export default function LoginPage() {
       const response = await api.post('/auth/login', { email, password });
       const { access_token, user } = response.data;
 
-      localStorage.setItem('sigeli_token', access_token);
-      localStorage.setItem('sigeli_user', JSON.stringify(user));
-      document.cookie = `sigeli_token=${access_token}; path=/; max-age=86400; SameSite=Lax`;
+      localStorage.setItem('talento_token', access_token);
+      localStorage.setItem('talento_user', JSON.stringify(user));
+      document.cookie = `talento_token=${access_token}; path=/; max-age=86400; SameSite=Lax`;
 
       if (user?.role === 'COMUNERO') {
-        setError('Los comuneros deben ingresar por la app móvil SIGELI.');
-        localStorage.removeItem('sigeli_token');
-        localStorage.removeItem('sigeli_user');
-        document.cookie = 'sigeli_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        setError('Los comuneros deben ingresar por la app móvil Talento.');
+        localStorage.removeItem('talento_token');
+        localStorage.removeItem('talento_user');
+        document.cookie = 'talento_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         return;
       }
 
@@ -72,7 +72,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@sigeli.com"
+                  placeholder="admin@talento.local"
                   className="input-rural pl-11"
                 />
               </div>

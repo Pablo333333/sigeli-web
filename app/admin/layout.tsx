@@ -41,8 +41,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('sigeli_user');
-    const token = localStorage.getItem('sigeli_token');
+    const storedUser = localStorage.getItem('talento_user');
+    const token = localStorage.getItem('talento_token');
 
     if (!token || !storedUser) {
       router.push('/login');
@@ -51,9 +51,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
     const parsed = JSON.parse(storedUser);
     if (parsed.role === 'COMUNERO') {
-      localStorage.removeItem('sigeli_token');
-      localStorage.removeItem('sigeli_user');
-      document.cookie = 'sigeli_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      localStorage.removeItem('talento_token');
+      localStorage.removeItem('talento_user');
+      document.cookie = 'talento_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
       router.push('/login');
       return;
     }
@@ -63,9 +63,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem('sigeli_token');
-    localStorage.removeItem('sigeli_user');
-    document.cookie = 'sigeli_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    localStorage.removeItem('talento_token');
+    localStorage.removeItem('talento_user');
+    document.cookie = 'talento_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     router.push('/login');
   };
 

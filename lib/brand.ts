@@ -1,13 +1,13 @@
 /**
- * BRANDING SIGELI (web) — alineado con mobile/src/theme/brand.ts
+ * BRANDING Talento (web) — alineado con mobile/src/theme/brand.ts
  * Logo: public/brand/logo.png
  */
 
 export const USE_CUSTOM_LOGO = true;
 
 export const BrandMeta = {
-  appName: 'SIGELI',
-  tagline: 'Sistema de Gestión de Empleo Local Inteligente',
+  appName: 'Talento',
+  tagline: 'Sistema de gestión de empleo local inteligente',
   organizerName: 'Organizador / Comunidad',
   logoPath: '/brand/logo.png',
 };

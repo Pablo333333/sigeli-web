@@ -63,7 +63,7 @@ export default function ContratosPage() {
 
   useEffect(() => {
     try {
-      const u = JSON.parse(localStorage.getItem('sigeli_user') || '{}');
+      const u = JSON.parse(localStorage.getItem('talento_user') || '{}');
       setUserRole(u.role || 'ADMIN');
     } catch {
       /* ignore */

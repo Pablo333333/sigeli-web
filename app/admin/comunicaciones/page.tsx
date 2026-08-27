@@ -80,7 +80,7 @@ export default function ComunicacionesPage() {
   };
 
   useEffect(() => {
-    const stored = localStorage.getItem('sigeli_user');
+    const stored = localStorage.getItem('talento_user');
     if (stored) {
       try {
         setUserRole(JSON.parse(stored)?.role || 'ADMIN');

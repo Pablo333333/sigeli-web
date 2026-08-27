@@ -2,7 +2,7 @@ import React from 'react';
 import './globals.css';
 
 export const metadata = {
-  title: 'SIGELI - Sistema de Gestión de Empleo Local Inteligente',
+  title: 'Talento: Sistema de gestión de empleo local inteligente',
   description: 'Plataforma para la gestión de empleo local y transparencia.',
 };
 

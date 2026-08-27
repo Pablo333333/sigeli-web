@@ -187,7 +187,7 @@ export default function GobernanzaPage() {
               <input 
                 type="text"
                 required
-                placeholder="Ej: Comunidad de Sigeli, Empresa Minera X"
+                placeholder="Ej: Comunidad de Talento, Empresa Minera X"
                 className="w-full border border-slate-200 rounded-lg p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                 value={formData.partesInvolucradas}
                 onChange={(e) => setFormData({...formData, partesInvolucradas: e.target.value})}
