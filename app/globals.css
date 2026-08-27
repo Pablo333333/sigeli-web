@@ -3,12 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Colores del logo oficial SIGELI */
+  --brand-primary: #1a94dd;
+  --brand-primary-dark: #0e6fa8;
+  --brand-primary-light: #3ba8e5;
+  --brand-accent: #f99011;
+  --brand-accent-soft: #fff1de;
+  --brand-success: #1b7a4e;
+  --brand-warning: #f99011;
+  --brand-danger: #b91c1c;
+  --brand-bg: #f3f8fc;
+  --brand-surface: #ffffff;
+  --brand-text: #0f1c24;
+  --brand-text-secondary: #4a6270;
+  --brand-border: #c9d9e4;
+  --touch-min: 56px;
+  --touch-large: 64px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #f8fafc;
+  color: var(--brand-text);
+  background: var(--brand-bg);
+}
+
+@layer components {
+  .btn-rural {
+    @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl transition-colors disabled:opacity-55;
+    min-height: var(--touch-min);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: var(--brand-primary);
+    color: #fff;
+  }
+  .btn-rural:hover {
+    background-color: var(--brand-primary-dark);
+  }
+  .btn-rural-accent {
+    @apply btn-rural;
+    background-color: var(--brand-accent);
+  }
+  .btn-rural-accent:hover {
+    filter: brightness(0.95);
+  }
+  .btn-rural-outline {
+    @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl border-2 transition-colors disabled:opacity-55;
+    min-height: var(--touch-min);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+    background: var(--brand-surface);
+  }
+  .input-rural {
+    @apply w-full rounded-xl border px-4 text-base focus:outline-none;
+    min-height: var(--touch-min);
+    border-color: var(--brand-border);
+  }
+  .input-rural:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(26, 148, 221, 0.18);
+  }
 }
